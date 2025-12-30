@@ -11,14 +11,14 @@ const Header = () => {
           <img src='/logo.png' className='h-20' />
         </Link>
         <Button variant="outline"></Button>
-        {/* <header>
+        <header>
           <SignedOut>
             <SignInButton />
           </SignedOut>
           <SignedIn>
             <UserButton />
           </SignedIn>
-        </header> */}
+        </header>
       </nav>
     </div>
   )
