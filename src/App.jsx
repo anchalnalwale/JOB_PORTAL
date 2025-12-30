@@ -10,10 +10,11 @@ import Onboarding from './pages/onboarding';
 import PostJob from './pages/post-job';
 import SavedJob from './pages/saved-job';
 import MyJobs from './pages/my-jobs';
+import AppLayout from './layouts/app-layout';
 
 const router = createBrowserRouter([
   {
-    element:<AppLayout/>,
+    element:<AppLayout />,
     children: [
       {
         path:"/",
