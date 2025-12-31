@@ -3,12 +3,13 @@ import { Button } from '../components/ui/button'
 import { Link } from 'react-router-dom'
 import { CarouselItem } from '@/components/ui/carousel'
 import companies from '../data/companies.json'
-import faq from '../data/faq.json'
+import faqs from '../data/faqs.json'
 import { Carousel } from '@/components/ui/carousel'
 import { CarouselContent } from '@/components/ui/carousel'
 import Autoplay from 'embla-carousel-autoplay'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
+import { Value } from '@radix-ui/react-select'
 
 const LandingPage = () => {
   return (
@@ -71,14 +72,16 @@ const LandingPage = () => {
 
       {/* Accordion */}
       <Accordion type="single" collapsible>
-        <AccordionItem value="item-1">
-          <AccordionTrigger>Is it accessible?</AccordionTrigger>
-          <AccordionContent>
-            Yes. It adheres to the WAI-ARIA design pattern.
-          </AccordionContent>
+        {faqs.map((faq, index) => {
+          return (
+            <AccordionItem key={index} value={`item-${index + 1}`}>
+          <AccordionTrigger>{faq.question}</AccordionTrigger>
+          <AccordionContent>{faq.answer}</AccordionContent>
         </AccordionItem>
-      </Accordion>
-    </main>
+      );
+        })}
+    </Accordion>
+    </main >
   )
 }
 
